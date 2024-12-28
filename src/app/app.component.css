@@ -1,0 +1,13 @@
+#calcDiv {
+    border-color: black;
+    border-style: double;
+    border-spacing: 20px;
+}
+
+#expressionDiv {
+    justify-content: center;
+}
+
+textarea {
+    width: 50%;
+}

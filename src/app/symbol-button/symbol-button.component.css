@@ -1,0 +1,15 @@
+/*I want to have two kinds of classes, one for number buttons and one for operator buttons.*/
+
+button {
+    border: black;
+    border: solid;
+    justify-content: center;
+}
+
+.numButton {
+    color: gray;
+}
+
+.opButton {
+    color: orange;
+}
