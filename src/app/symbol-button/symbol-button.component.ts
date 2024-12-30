@@ -1,4 +1,4 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-symbol-button',
@@ -11,11 +11,16 @@ export class SymbolButtonComponent {
   @Output() expressionChange: EventEmitter<string> = new EventEmitter<string>();
 
   addSymbol() {
-    this.expressionChange.emit(this.symbol);
+    if (this.symbol == 'NEG'){
+      this.expressionChange.emit('-');
+    }
+    else {
+      this.expressionChange.emit(this.symbol);
+    }
   }
 
   checkSymbol(): string {
-    if (['+', '-', '*', '/', '.'].includes(this.symbol)){
+    if ([' + ', ' - ', ' * ', ' / ', '.', 'NEG', '(', ')'].includes(this.symbol)){
       return "opButton";
     }
     return "numButton";

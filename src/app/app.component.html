@@ -19,10 +19,10 @@
 
     <!--These will be the operators. I aim to have them on top-->
   <div class = "opsDiv">
-    <app-symbol-button (expressionChange)="update($event)" [symbol]="'+'"></app-symbol-button>
-    <app-symbol-button (expressionChange)="update($event)" [symbol]="'-'"></app-symbol-button>
-    <app-symbol-button (expressionChange)="update($event)" [symbol]="'*'"></app-symbol-button>
-    <app-symbol-button (expressionChange)="update($event)" [symbol]="'/'"></app-symbol-button>
+    <app-symbol-button (expressionChange)="update($event)" [symbol]="' + '"></app-symbol-button>
+    <app-symbol-button (expressionChange)="update($event)" [symbol]="' - '"></app-symbol-button>
+    <app-symbol-button (expressionChange)="update($event)" [symbol]="' * '"></app-symbol-button>
+    <app-symbol-button (expressionChange)="update($event)" [symbol]="' / '"></app-symbol-button>
     <app-symbol-button (expressionChange)="update($event)" [symbol]="'.'"></app-symbol-button>
   </div>
 
@@ -31,12 +31,15 @@
     <app-symbol-button (expressionChange)="update($event)" [symbol]="'1'"></app-symbol-button>
     <app-symbol-button (expressionChange)="update($event)" [symbol]="'2'"></app-symbol-button>
     <app-symbol-button (expressionChange)="update($event)" [symbol]="'3'"></app-symbol-button>
+    <app-symbol-button (expressionChange)="update($event)" [symbol]="'('"></app-symbol-button>
+    <app-symbol-button (expressionChange)="update($event)" [symbol]="')'"></app-symbol-button>
   </div>
   
   <div class = "numsDiv">
     <app-symbol-button (expressionChange)="update($event)" [symbol]="'4'"></app-symbol-button>
     <app-symbol-button (expressionChange)="update($event)" [symbol]="'5'"></app-symbol-button>
     <app-symbol-button (expressionChange)="update($event)" [symbol]="'6'"></app-symbol-button>
+    <app-symbol-button (expressionChange)="update($event)" [symbol]="'NEG'"></app-symbol-button>
   </div>
   
   <div class = "numsDiv">

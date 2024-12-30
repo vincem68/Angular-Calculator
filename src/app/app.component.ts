@@ -36,7 +36,7 @@ export class AppComponent {
 
   solve(): void {
     try {
-      eval(this.expression); 
+      this.expression = eval(this.expression); 
     } catch (error) {
         if (error instanceof SyntaxError) {
             this.expression = "Invalid expression";
