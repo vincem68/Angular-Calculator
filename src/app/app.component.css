@@ -1,7 +1,21 @@
 #calcDiv {
     border-color: black;
-    border-style: double;
-    border-spacing: 20px;
+    border-style: solid;
+    border-spacing: 50px;
+    background-color:gold;
+    max-width: fit-content;
+    margin: auto;
+}
+
+button {
+    height: 50px;
+    width: 50px;
+    margin: 5px;
+}
+
+.clearButton, .backspaceButton {
+    background-color: black;
+    color: white;
 }
 
 #expressionDiv {
@@ -9,5 +23,15 @@
 }
 
 textarea {
-    width: 50%;
+    margin: 5px;
+    width: 300px;
+}
+
+.opsDiv, .numsDiv {
+    display: flex;
+}
+
+.calcButton {
+    background-color: blue;
+    color: white;
 }

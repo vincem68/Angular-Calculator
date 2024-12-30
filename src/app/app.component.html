@@ -3,7 +3,9 @@
 <p>This is a project that will showcase some Angular skills. We'll make a simple calculator.</p>
 <p>
   We'll have a parent component, which we can think of as the overall calculator itself, and
-  the child component, which I will use for the buttons.
+  the child component, which I will use for the buttons. The parent component contains the 
+  expression bar and some function buttons, while the child component is used for adding numbers 
+  and operators to the expression.
 </p>
 
 <div id = "calcDiv">
@@ -21,6 +23,7 @@
     <app-symbol-button (expressionChange)="update($event)" [symbol]="'-'"></app-symbol-button>
     <app-symbol-button (expressionChange)="update($event)" [symbol]="'*'"></app-symbol-button>
     <app-symbol-button (expressionChange)="update($event)" [symbol]="'/'"></app-symbol-button>
+    <app-symbol-button (expressionChange)="update($event)" [symbol]="'.'"></app-symbol-button>
   </div>
 
   <!--These will be the numbers 0 thru 9-->
@@ -43,6 +46,9 @@
     <app-symbol-button (expressionChange)="update($event)" [symbol]="'0'"></app-symbol-button>
   </div>
 
-  <button class="clearButton" (click)="clear()">Clear</button>
-  <button class="backspace-button" (click)="backSpace()">Back</button>
+  <div class = "functionsDiv">
+    <button class="clearButton" (click)="clear()">Clear</button>
+    <button class="backspaceButton" (click)="backSpace()">Back</button>
+    <button class="calcButton" (click)="solve()">=</button>
+  </div>
 </div>

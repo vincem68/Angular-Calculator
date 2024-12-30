@@ -13,4 +13,11 @@ export class SymbolButtonComponent {
   addSymbol() {
     this.expressionChange.emit(this.symbol);
   }
+
+  checkSymbol(): string {
+    if (['+', '-', '*', '/', '.'].includes(this.symbol)){
+      return "opButton";
+    }
+    return "numButton";
+  }
 }

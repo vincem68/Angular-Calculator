@@ -1,7 +1,5 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
 import { SymbolButtonComponent } from './symbol-button/symbol-button.component';
-import { Observable } from 'rxjs';
 
 
 @Component({
@@ -13,20 +11,38 @@ import { Observable } from 'rxjs';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'Calculator-App';
 
+  endProblem: boolean = false;
   //this will be the overall math expression
   expression: string = "";
 
   update(symbol: string){
+    if (this.endProblem){
+      this.expression = "";
+      this.endProblem = false;
+    }
     this.expression += symbol;
   }
 
-  clear(){
+  clear(): void {
     this.expression = "";
   }
 
   backSpace(): void {
-    this.expression.substring(0, this.expression.length - 1);
+    if (!this.endProblem){
+      this.expression = this.expression.substring(0, this.expression.length - 1);
+    }
   }
+
+  solve(): void {
+    try {
+      eval(this.expression); 
+    } catch (error) {
+        if (error instanceof SyntaxError) {
+            this.expression = "Invalid expression";
+        }
+    }
+    this.endProblem = true;
+  }
+
 }
